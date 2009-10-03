@@ -1,14 +1,13 @@
-require 'osx/cocoa'
+framework 'cocoa'
 
 module Textorize
   class Renderer
-    include OSX
 
     def initialize(window, string, options)
       @text_view = NSTextView.alloc.initWithFrame([0,0,0,0])
 
       set_attr_and_text options, string
-      window.setContentView @text_view
+      window.contentView = @text_view
       @text_view.sizeToFit
       
       window.display
@@ -32,25 +31,22 @@ module Textorize
         para.setLineSpacing(options[:lineheight])
         
         attribs = NSMutableDictionary.alloc.init
-        attribs.setObject_forKey(NSFont.fontWithName_size(options[:font], options[:size]), NSFontAttributeName)
-        attribs.setObject_forKey(options[:kerning], NSKernAttributeName)
-        attribs.setObject_forKey(para, NSParagraphStyleAttributeName)
-        attribs.setObject_forKey(0, NSBaselineOffsetAttributeName)
-        attribs.setObject_forKey(options[:obliqueness], NSObliquenessAttributeName)
+        attribs.setObject(NSFont.fontWithName(options[:font], size: options[:size]), forKey: NSFontAttributeName)
+        attribs.setObject(options[:kerning], forKey: NSKernAttributeName)
+        attribs.setObject(para, forKey: NSParagraphStyleAttributeName)
+        attribs.setObject(0, forKey: NSBaselineOffsetAttributeName)
+        attribs.setObject(options[:obliqueness], forKey: NSObliquenessAttributeName)
         
         @text_view.setTypingAttributes(attribs)
         @text_view.lowerBaseline(nil)
         
-        @text_view.setString string
+        @text_view.string = string
         
         color = (options[:color] || '0,0,0').split(',')
         background = (options[:background] || '1,1,1').split(',')
         
-        @text_view.setTextColor(
-          NSColor.colorWithDeviceRed_green_blue_alpha(color[0], color[1], color[2], 1))
-        
-        @text_view.setBackgroundColor( 
-          NSColor.colorWithDeviceRed_green_blue_alpha(background[0], background[1], background[2], 1))
+        @text_view.setTextColor(NSColor.colorWithDeviceRed(color[0], green: color[1], blue: color[2], alpha:1))
+        @text_view.backgroundColor = NSColor.colorWithDeviceRed(background[0], green: background[1], blue: background[2], alpha:1)
       end
     
   end

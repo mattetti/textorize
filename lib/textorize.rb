@@ -1,3 +1,4 @@
+framework 'cocoa'
 $:.unshift File.dirname(__FILE__)
 
 require "textorize/runner"
