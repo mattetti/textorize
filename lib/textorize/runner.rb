@@ -3,25 +3,19 @@ module Textorize
     
     def initialize(string, output, options)
       app = NSApplication.sharedApplication
-      
-      delegate = RunnerApplication.alloc.init
-      delegate.options = options
-      delegate.string = string
-      delegate.output = output
-      
-      app.delegate = delegate
+      app.delegate = RunnerApplication.new(string, output, options)
       app.run
     end
     
   end
 
   class RunnerApplication
-    attr_accessor :options
-    attr_accessor :string
-    attr_accessor :output
 
-    def initialize
+    def initialize(string, output, options)
       @window = NSWindow.alloc.initWithContentRect([-2000, -2000, 2000, 2000], styleMask: NSBorderlessWindowMask, backing: 2, defer: 0)
+      @string = string
+      @output = output
+      @options = options
     end
     
     def applicationDidFinishLaunching(notification)
