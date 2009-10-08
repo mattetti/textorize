@@ -46,7 +46,7 @@ options[:size] ||= 28.0
 options[:kerning] ||= 0
 options[:lineheight] ||= options[:size]
 options[:output] ||= 'output.png'
-options[:strings] = ARGV.first || 'Hello World'
+options[:strings] = ARGV.first || 'MacRuby'
 options[:width] ||= 250
 options[:obliqueness] ||= 0
 

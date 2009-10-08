@@ -1,4 +1,4 @@
-= textorize: for a more beautiful web
+= textorizer: for a more beautiful web
 
 textorize produces beautifully subpixel antialiased text graphics on OS X, through a MacRuby Ruby script.
 
@@ -14,7 +14,7 @@ http://www.slideshare.net/madrobby/textorize
 Install the gem and binary by doing:
 
     $ macgem sources -a http://gemcutter.org
-    $ sudo macgem install macruby-textorize 
+    $ sudo macgem install textorize-mr 
 
 
 This will install the textorize Ruby Gem, and the +textorize+ command
@@ -41,5 +41,11 @@ line tool.
 = It's alpha!
 
 This software is alpha-quality and has some bugs and known issues. Please contribute!
+
+= Source
+
+http://github.com/mattetti/textorize 
+Ported to MacRuby from http://github.com/madrobby/textorize 
+
 
 textorize is released under the MIT license.
