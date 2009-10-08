@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
-  s.name = "textorize"
-  s.version = "0.1.5"
+  s.name = "macruby-textorize"
+  s.version = "0.1.0"
   s.date = "2009-09-27"
   s.summary = "OS X subpixel antialiased PNG string renderer for MacRuby"
   s.email = "thomas@fesch.at"

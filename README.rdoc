@@ -13,10 +13,9 @@ http://www.slideshare.net/madrobby/textorize
 
 Install the gem and binary by doing:
 
-    $ macgem sources -a http://gems.github.com
-    $ sudo gem install mattetti-textorize 
+    $ macgem sources -a http://gemcutter.org
+    $ sudo macgem install macruby-textorize 
 
-(originally from madrobby-textorize)
 
 This will install the textorize Ruby Gem, and the +textorize+ command
 line tool.
@@ -35,7 +34,7 @@ line tool.
     
 = Examples
 
-    textorize -f"Gotham" -s200 Hello
+    textorize -f"MacRuby Rocks" -s200 Hello
     
     textorize -fLucida\ Grande -s150 --color=0.5,1,0.5 --background=0,0,0.5 foo\ bar
     
