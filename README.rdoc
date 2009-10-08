@@ -1,6 +1,6 @@
 = textorize: for a more beautiful web
 
-textorize produces beautifully subpixel antialiased text graphics on OS X, through a Rubycocoa Ruby script.
+textorize produces beautifully subpixel antialiased text graphics on OS X, through a MacRuby Ruby script.
 
 Output format is always PNG.
 
