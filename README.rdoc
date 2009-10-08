@@ -34,7 +34,7 @@ line tool.
     
 = Examples
 
-    textorize -f"MacRuby Rocks" -s200 Hello
+    textorize -f"Didot" -s200 "MacRuby Rocks"
     
     textorize -fLucida\ Grande -s150 --color=0.5,1,0.5 --background=0,0,0.5 foo\ bar
     
