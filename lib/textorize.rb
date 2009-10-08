@@ -1,4 +1,4 @@
-framework 'cocoa'
+framework 'Cocoa'
 $:.unshift File.dirname(__FILE__)
 
 require "textorize/runner"
